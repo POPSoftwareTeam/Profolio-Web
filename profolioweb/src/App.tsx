@@ -6,7 +6,7 @@ import { User } from './Models/UserModel';
 
 function App() {
   let authservice = new APIAuthenticationService()
-  authservice.RegisterClient(new User("kyler.daybell2@gmail.com","asdfasdf"))
+  authservice.Login(new User("kyler.daybell96@gmail.com","kyler"))
   return (
     <div className="App">
       <header className="App-header">
