@@ -8,8 +8,7 @@ export default class APIPhotoService{
         let newurl = this.api+"/Photos/Upload"
         let formData = new FormData()
         formData.append('avatar',file,'image.jpg')
-        let headers = { 
-            "Content-Type": "multipart/form-data", 
+        let headers = {  
             "Authorization": "Bearer "+token.key
         };
         let response = await fetch(newurl, { 
