@@ -1,8 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import APIAuthenticationService from "./Services/APIAuthenticationService"
+import { User } from './Models/UserModel';
 
 function App() {
+  let authservice = new APIAuthenticationService()
+  authservice.RegisterClient(new User("kyler.daybell2@gmail.com","asdfasdf"))
   return (
     <div className="App">
       <header className="App-header">
