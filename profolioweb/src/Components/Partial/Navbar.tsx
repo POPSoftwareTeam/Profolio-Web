@@ -13,7 +13,7 @@ const Navbar:React.FC = props => {
               <Link to="/FileUpload">Upload a file</Link>
             </li>
             <li>
-              <Link to="/users">Users</Link>
+              <Link to="/Login">Login</Link>
             </li>
           </ul>
         </nav>

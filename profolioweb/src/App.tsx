@@ -7,6 +7,7 @@ import {
 import FileUpload from './Components/FileUploadPage'
 import Navbar from './Components/Partial/Navbar'
 import Home from './Components/HomePage'
+import Login from './Components/LoginPage'
 
 
 const App:React.FC = props => {
@@ -19,6 +20,7 @@ const App:React.FC = props => {
             <Switch>
               <Route exact path="/" component={Home}/>
               <Route exact path="/FileUpload" component={FileUpload}/>
+              <Route exact path="/Login" component ={Login}/>
             </Switch>
        </>
     )
