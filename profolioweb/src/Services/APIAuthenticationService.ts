@@ -14,6 +14,7 @@ export default class APIAuthenticationService{
             body: body
         })
         let responseJson = await response.json();
+        console.log("in the thing")
     }
     public async RegisterPhotographer(user:User){
         let newurl = this.api+"/Register/Photographer";

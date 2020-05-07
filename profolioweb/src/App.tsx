@@ -8,6 +8,7 @@ import FileUpload from './Components/FileUploadPage'
 import Navbar from './Components/Partial/Navbar'
 import Home from './Components/HomePage'
 import Login from './Components/LoginPage'
+import Register from './Components/RegisterPage'
 
 
 const App:React.FC = props => {
@@ -21,6 +22,7 @@ const App:React.FC = props => {
               <Route exact path="/" component={Home}/>
               <Route exact path="/FileUpload" component={FileUpload}/>
               <Route exact path="/Login" component ={Login}/>
+              <Route exact path="/Register" component ={Register}/>
             </Switch>
        </>
     )

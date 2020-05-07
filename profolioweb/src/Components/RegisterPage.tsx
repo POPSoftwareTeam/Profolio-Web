@@ -1,37 +1,38 @@
 import React from 'react';
 import APIAuthenticationService from '../Services/APIAuthenticationService';
-import APIPhotoService from '../Services/APIPhotoService';
 import { User } from '../Models/UserModel';
 
 
-const Login:React.FC = props => {
+const Register:React.FC = props => {
     let [email, setEmail] = React.useState<string>("");
     let [password, setPassword] = React.useState<string>("");
+    let [verifyPassword, setVerifyPassword] = React.useState<string>("");
 
 
     const submitCharityToAPI = async () => {
       let authservice = new APIAuthenticationService()
-      let token =  await authservice.Login(new User(email,password))
-      console.log(token)
+      if(password == verifyPassword){
+            await authservice.RegisterClient(new User(email,password))
+      }
     }
     
     return (
       <>
         <form>
-            <h1>Login</h1>
+            <h1>Register</h1>
             <label>Email:</label>
             <input type="email" value={email} onChange={(event:any) => setEmail(event.target.value)}/>
             
             <label>Password</label>
             <input type="password" value={password} onChange={(event:any) => setPassword(event.target.value)}/>
             
-            <button type="button" onClick={async ()=> await submitCharityToAPI()}>Login</button>
+            <label>Verify Password</label>
+            <input type="password" value={verifyPassword} onChange={(event:any) => setVerifyPassword(event.target.value)}/>
+
+            <button type="button" onClick={async ()=> await submitCharityToAPI()}>Register</button>
         </form>
        </>
     )
 }
 
-
-
-
-export default Login;
+export default Register;
