@@ -1,31 +1,25 @@
 import React from 'react';
-import APIAuthenticationService from './Services/APIAuthenticationService';
-import APIPhotoService from './Services/APIPhotoService';
-import { User } from './Models/UserModel';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+import FileUpload from './Components/FileUploadPage'
+import Navbar from './Components/Partial/Navbar'
+import Home from './Components/HomePage'
 
 
 const App:React.FC = props => {
-    let [image, setImage] = React.useState<File|null>();
-
-
-    const submitCharityToAPI = async () => {
-      console.error("hhahaha")
-      let authservice = new APIAuthenticationService()
-      let token =  await authservice.Login(new User("kyler.daybell96@gmail.com","kyler"))
-      if(token){
-        let photoservice = new APIPhotoService();
-        await photoservice.UploadPhoto(token,image);
-        console.log(image);
-      }
-    }
     
     return (
       <>
-        <form>
-            <h3>PhotoUpload</h3>
-            <input type="file" onChange={(event:any) => setImage(event.target.files[0])}></input>
-            <button type="button" onClick={async ()=> await submitCharityToAPI()}>Submit</button>
-        </form>
+        <Navbar/>
+        {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+            <Switch>
+              <Route exact path="/" component={Home}/>
+              <Route exact path="/FileUpload" component={FileUpload}/>
+            </Switch>
        </>
     )
 }
