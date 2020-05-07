@@ -1,25 +1,29 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+import '../../Public/CSS/navbar.css'
 
 const Navbar:React.FC = props => {    
     return (
       <>
-        <nav>
-          <ul>
-            <li>
+      
+        <nav className="NavbarGridContainer">
+          
+            <div className="Home">
               <Link to="/">Home</Link>
-            </li>
-            <li>
+            </div>
+            <div className="FileUpload">
               <Link to="/FileUpload">Upload a file</Link>
-            </li>
-            <li>
+            </div>
+            <div className="Empty"></div>
+            <div className="Login">
               <Link to="/Login">Login</Link>
-            </li>
-            <li>
+            </div>
+            <div className="Register">
               <Link to="/Register">Register</Link>
-            </li>
-          </ul>
+            </div>
+    
         </nav>
+      
        </>
     )
 }

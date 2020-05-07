@@ -1,0 +1,26 @@
+.NavbarGridContainer{
+    display: grid;
+    grid-template-columns: 4em 4em auto 4em 4em;
+    grid-template-rows: auto;
+    grid-template-areas: 'B1 B2 E B3 B4';
+}
+
+.Empty{
+    grid-area: E;
+}
+.Home{
+    grid-area: B1;
+    background-color: yellow;
+}
+.FileUpload{
+    grid-area: B2;
+    background-color: green;
+}
+.Login{
+    grid-area: B3;
+    background-color: red;
+}
+.Register{
+    grid-area: B4;
+    background-color: aqua;
+}
