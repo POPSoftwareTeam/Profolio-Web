@@ -12,7 +12,7 @@ const Register:React.FC = props => {
     const submitCharityToAPI = async () => {
       let authservice = new APIAuthenticationService()
       if(password == verifyPassword){
-            await authservice.RegisterClient(new User(email,password))
+            await authservice.Register(new User(email,password))
       }
     }
     
