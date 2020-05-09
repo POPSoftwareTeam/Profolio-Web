@@ -1,4 +1,11 @@
+@import "./palette.scss";
 .linkItem {
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    font-size: larger;
+}
+li {
     padding: 10px 15px;
     color: white;
     text-decoration: none;
@@ -18,8 +25,8 @@ button {
 
 /* Class */
 .navBar {
-    width: 100%;
-    background-color: #111;
+    //width: 100%;
+    background-color: $color3;
     color: white;
     padding: 20px 20px;
 }
@@ -47,6 +54,9 @@ button {
     }
 
     .linkItem {
+        padding: 0 15px;
+    }
+    li {
         padding: 0 15px;
     }
 }

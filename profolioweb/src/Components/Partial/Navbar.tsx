@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaAlignRight } from "react-icons/fa";
-import "../../css/navbar.css";
+import "../../css/navbar.scss";
 const Navbar: React.FC = (props) => {
   const [toggle, setToggle] = useState(false);
 
@@ -15,10 +15,18 @@ const Navbar: React.FC = (props) => {
           <FaAlignRight />
         </button>
         <div className={toggle ? "nav-links show-nav" : "nav-links"}>
-          <Link className="linkItem " to="/">Home</Link>
-          <Link className="linkItem" to="/FileUpload">Upload a file</Link>
-          <Link className="linkItem" to="/Login">Login</Link>
-          <Link className="linkItem" to="/Register">Register</Link>
+          <Link className="linkItem " to="/">
+            Home
+          </Link>
+          <Link className="linkItem" to="/FileUpload">
+            Upload a file
+          </Link>
+          <Link className="linkItem" to="/Login">
+            Login
+          </Link>
+          <Link className="linkItem" to="/Register">
+            Register
+          </Link>
         </div>
       </div>
     </>
