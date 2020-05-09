@@ -1,30 +1,28 @@
-import React from 'react';
-import {Link} from "react-router-dom";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { FaAlignRight } from "react-icons/fa";
+import "../../css/navbar.css";
+const Navbar: React.FC = (props) => {
+  const [toggle, setToggle] = useState(false);
 
-const Navbar:React.FC = props => {    
-    return (
-      <>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/FileUpload">Upload a file</Link>
-            </li>
-            <li>
-              <Link to="/Login">Login</Link>
-            </li>
-            <li>
-              <Link to="/Register">Register</Link>
-            </li>
-          </ul>
-        </nav>
-       </>
-    )
-}
-
-
-
+  const onToggle = () => {
+    setToggle(!toggle);
+  };
+  return (
+    <>
+      <div className="navBar">
+        <button onClick={() => onToggle()}>
+          <FaAlignRight />
+        </button>
+        <div className={toggle ? "nav-links show-nav" : "nav-links"}>
+          <Link className="linkItem " to="/">Home</Link>
+          <Link className="linkItem" to="/FileUpload">Upload a file</Link>
+          <Link className="linkItem" to="/Login">Login</Link>
+          <Link className="linkItem" to="/Register">Register</Link>
+        </div>
+      </div>
+    </>
+  );
+};
 
 export default Navbar;
