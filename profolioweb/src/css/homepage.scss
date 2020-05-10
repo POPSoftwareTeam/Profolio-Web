@@ -32,10 +32,11 @@
 }
 .mainText .prompt{
     grid-column:2/4;
-    grid-row:2/5;
+    grid-row:2/4;
     font-size: xx-large;
     text-align: left;
 }
+
 .rightImage{
     grid-column:3/4;
     grid-row:1/5;
@@ -62,4 +63,60 @@
     background-color: $color2;
     color: white;
     text-align: center;
+}
+
+//////////////////////////////////////
+//Button CSS
+//////////////////////////////////////@extend@import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
+.mainText .prompt .buttonBox{
+    margin: 1em .5em 1em 0em;
+    display: flex;
+	align-items: center;
+    justify-content: left;
+}
+.mainText .prompt .button {
+	display: flex;
+	align-items: center;
+    justify-content: center;
+    font-size: small;
+    color: white;
+	
+	cursor: pointer;
+
+	svg {
+		height: 55px;
+		width: 150px;
+		fill: none;
+		stroke-width: 5;
+
+		.o1 {
+			stroke: rgba($color7a, 0.7);
+			fill: $color7;
+			transition: all 1s ease-in-out;
+		}
+
+		.o2 {
+			stroke: white;
+			stroke-dasharray: 20 420;
+			stroke-dashoffset: 20;
+			transition: all 1s ease-in-out;
+		}
+	}
+
+	span {
+		position: absolute;
+		margin: auto 0;
+		text-transform: uppercase;
+		letter-spacing: 3px;
+	}
+
+	&:hover {
+		.o1{
+			fill: rgba($color7c, 0.7);
+		}
+		
+		.o2 {
+			stroke-dashoffset: -420;
+		}
+	}
 }
