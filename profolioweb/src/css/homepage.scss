@@ -1,7 +1,7 @@
 @import "./palette.scss";
 .grid-container{
     display: grid;
-    grid-template-columns: 1fr 1.2fr 1.9fr;
+    grid-template-columns: 1fr 1fr 1.6fr;
     grid-template-rows: 1fr 4fr 3fr 2fr;
     height:calc(100vh - 66px); //Fix the height later, I just hard coded this for now cuz it needs to be based off the navbar height
 }
@@ -58,4 +58,8 @@
     padding: 1em;
     color: white;
     text-align: center;
+}
+.othercontent{
+    height:200px;
+    background-color: $color5;
 }
