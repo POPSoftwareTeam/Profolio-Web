@@ -19,28 +19,29 @@ const Login: React.FC = (props) => {
       <div className="form-grid-container">
         <div className="leftImage"></div>
         <div className="form">
+          <h2><b>Login</b></h2>
           <form>
-            <div className="loginTitle">Login To Continue</div>
             <div className="formContent">
               <div>
-                <label>
-                  Email
-                  <input
-                    type="email"
-                    name="name"
-                    value={email}
-                    onChange={(event: any) => setEmail(event.target.value)}
-                  />
-                </label>
-              </div>
-              <label>
-                Password
+                
                 <input
-                  type="password"
-                  value={password}
-                  onChange={(event: any) => setPassword(event.target.value)}
+                  type="email"
+                  className="email"
+                  placeholder="Email"
+                  name="name"
+                  value={email}
+                  onChange={(event: any) => setEmail(event.target.value)}
                 />
-              </label>
+                {/* <div className="label">Email</div> */}
+              </div>
+
+              <input
+                type="password"
+                className="pwd"
+                placeholder="Password"
+                value={password}
+                onChange={(event: any) => setPassword(event.target.value)}
+              />
             </div>
             <button
               type="button"
