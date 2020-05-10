@@ -38,7 +38,6 @@ h2{
     margin:0 auto;
     border:none;
     &::placeholder{
-        font-size: medium;
       -webkit-transform:translateY(0px);
         transform:translateY(0px);
       -webkit-transition:.5s;
@@ -62,8 +61,8 @@ h2{
       &::placeholder{
         color:$color1;
         position:relative;
-        -webkit-transform:translateY(-18px);
-        transform:translateY(-18px);
+        -webkit-transform:translateY(-20px);
+        transform:translateY(-20px);
         
       }
     //     & + .label{

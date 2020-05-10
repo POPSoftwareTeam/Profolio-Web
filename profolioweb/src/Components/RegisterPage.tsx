@@ -1,4 +1,5 @@
 import React from "react";
+import "../css/form.scss";
 import APIAuthenticationService from "../Services/APIAuthenticationService";
 import { User } from "../Models/UserModel";
 
@@ -19,25 +20,32 @@ const Register: React.FC = (props) => {
       <div className="form-grid-container">
         <div className="leftImage"></div>
         <div className="form">
+            <h2><b>Register</b></h2>
           <form>
-            <h1>Register</h1>
-            <label>Email:</label>
+          <div className="formContent">
+            {/* <label>Email:</label> */}
             <input
               type="email"
+              className="email"
+              placeholder="Email"
               value={email}
               onChange={(event: any) => setEmail(event.target.value)}
             />
 
-            <label>Password</label>
+            {/* <label>Password</label> */}
             <input
               type="password"
+              className="pwd"
+              placeholder="Password"
               value={password}
               onChange={(event: any) => setPassword(event.target.value)}
             />
 
-            <label>Verify Password</label>
+            {/* <label>Verify Password</label> */}
             <input
               type="password"
+              className="pwd"
+              placeholder="Verify Password"
               value={verifyPassword}
               onChange={(event: any) => setVerifyPassword(event.target.value)}
             />
@@ -48,6 +56,7 @@ const Register: React.FC = (props) => {
             >
               Register
             </button>
+            </div>
           </form>
         </div>
       </div>
