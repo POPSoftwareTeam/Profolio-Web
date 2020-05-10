@@ -47,15 +47,19 @@
     grid-column:1/2;
     grid-row:4/5;
     background-color: $color3;
-    padding: 1em;
     color: white;
     text-align: center;
+
+}
+.bottomText{
+    position: relative;
+    top: 45%;
+    font-size: x-large;
 }
 .bottomRightStuff{
     grid-column:2/3;
     grid-row:4/5;
     background-color: $color2;
-    padding: 1em;
     color: white;
     text-align: center;
 }

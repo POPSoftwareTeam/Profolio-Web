@@ -18,8 +18,8 @@ const Home: React.FC = (props) => {
           </div>
         </div>
         <div className="rightImage"></div>
-        <div className="bottomStuff">Upload your images!</div>
-        <div className="bottomRightStuff">Share those images with clients!</div>
+        <div className="bottomStuff"><div className="bottomText">Upload your images!</div></div>
+        <div className="bottomRightStuff"><div className="bottomText">Share those images with clients!</div></div>
       </div>
     </>
   );
