@@ -68,13 +68,19 @@
 //////////////////////////////////////
 //Button CSS
 //////////////////////////////////////@extend@import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
-.mainText .prompt .buttonBox{
+.buttonBox{
     margin: 1em .5em 1em 0em;
     display: flex;
 	align-items: center;
     justify-content: left;
 }
-.mainText .prompt .button {
+.buttonBoxCenter{
+    margin: 1em .5em 1em 0em;
+    display: flex;
+	align-items: center;
+    justify-content: center;
+}
+.button {
 	display: flex;
 	align-items: center;
     justify-content: center;

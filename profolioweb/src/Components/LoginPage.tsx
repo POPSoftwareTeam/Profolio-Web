@@ -43,12 +43,24 @@ const Login: React.FC = (props) => {
                 onChange={(event: any) => setPassword(event.target.value)}
               />
             </div>
-            <button
-              type="button"
-              onClick={async () => await submitCharityToAPI()}
-            >
-              Login
-            </button>
+           <div className="buttonBoxCenter">
+                <div
+                  className="button"
+                  onClick={async () => await submitCharityToAPI()}
+                >
+                  <span>Login</span>
+                  <svg>
+                    <polyline
+                      className="o1"
+                      points="0 0, 150 0, 150 55, 0 55, 0 0"
+                    ></polyline>
+                    <polyline
+                      className="o2"
+                      points="0 0, 150 0, 150 55, 0 55, 0 0"
+                    ></polyline>
+                  </svg>
+                </div>
+              </div>
           </form>
         </div>
       </div>
