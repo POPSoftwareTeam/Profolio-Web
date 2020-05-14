@@ -3,6 +3,7 @@ import "../css/form.scss";
 import APIAuthenticationService from "../Services/APIAuthenticationService";
 import APIPhotoService from "../Services/APIPhotoService";
 import { User } from "../Models/UserModel";
+import MainButton from "./shared/MainButton";
 
 const Login: React.FC = (props) => {
   let [email, setEmail] = React.useState<string>("");
@@ -43,24 +44,11 @@ const Login: React.FC = (props) => {
                 onChange={(event: any) => setPassword(event.target.value)}
               />
             </div>
-           <div className="buttonBoxCenter">
-                <div
-                  className="button"
-                  onClick={async () => await submitCharityToAPI()}
-                >
-                  <span>Login</span>
-                  <svg>
-                    <polyline
-                      className="o1"
-                      points="0 0, 150 0, 150 55, 0 55, 0 0"
-                    ></polyline>
-                    <polyline
-                      className="o2"
-                      points="0 0, 150 0, 150 55, 0 55, 0 0"
-                    ></polyline>
-                  </svg>
-                </div>
+            <div className="buttonBoxCenter" >
+              <div onClick={async () => await submitCharityToAPI()}>
+               <MainButton text={"Login"}/>
               </div>
+            </div>
           </form>
         </div>
       </div>

@@ -2,10 +2,11 @@ import React from "react";
 import "../css/homepage.scss";
 import { withRouter } from "react-router";
 import profolioIcon from "../resources/Images/profolioIcon.png";
+import MainButton from "./shared/MainButton";
 const Home: React.FC = (props) => {
-  const navigateToRegister = (link:string)=>{
+  const navigateToRegister = (link: string) => {
     //props.history.push("/Register");
-  }
+  };
   return (
     <>
       {/* <h1>WELCOME TO THE HOME PAGE</h1> */}
@@ -20,20 +21,10 @@ const Home: React.FC = (props) => {
               get everyone coordinated with our fast and reliable image sharing
               service.
               <div className="buttonBox">
-              <div className="button" onClick={(link) => navigateToRegister("/Register")}>
-                <span>Register Now!</span>
-                <svg>
-                  <polyline
-                    className="o1"
-                    points="0 0, 150 0, 150 55, 0 55, 0 0"
-                  ></polyline>
-                  <polyline
-                    className="o2"
-                    points="0 0, 150 0, 150 55, 0 55, 0 0"
-                  ></polyline>
-                </svg>
+                <div onClick={(link) => navigateToRegister("/Register")}>
+                  <MainButton text="Register Now!" />
+                </div>
               </div>
-            </div>
             </div>
           </div>
         </div>

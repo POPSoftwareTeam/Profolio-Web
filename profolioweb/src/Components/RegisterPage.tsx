@@ -2,6 +2,8 @@ import React from "react";
 import "../css/form.scss";
 import APIAuthenticationService from "../Services/APIAuthenticationService";
 import { User } from "../Models/UserModel";
+import MainButton from "./shared/MainButton";
+
 
 const Register: React.FC = (props) => {
   let [email, setEmail] = React.useState<string>("");
@@ -52,22 +54,9 @@ const Register: React.FC = (props) => {
                 onChange={(event: any) => setVerifyPassword(event.target.value)}
               />
               <div className="buttonBoxCenter">
-                <div
-                  className="button"
-                  onClick={async () => await submitCharityToAPI()}
-                >
-                  <span>Register</span>
-                  <svg>
-                    <polyline
-                      className="o1"
-                      points="0 0, 150 0, 150 55, 0 55, 0 0"
-                    ></polyline>
-                    <polyline
-                      className="o2"
-                      points="0 0, 150 0, 150 55, 0 55, 0 0"
-                    ></polyline>
-                  </svg>
-                </div>
+              <div onClick={async () => await submitCharityToAPI()}>
+               <MainButton text={"Register"}/>
+              </div>
               </div>
             </div>
           </form>
