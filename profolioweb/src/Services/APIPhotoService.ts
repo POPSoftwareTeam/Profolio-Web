@@ -39,6 +39,25 @@ export default class APIPhotoService{
             return [""]
         }
     }
+    public async GetSharedPhotos():Promise<string[]>{
+        let token = new Token(localStorage.getItem('token') ?? "");
+        
+        let newurl = this.api+"/Photos/SharedWithMe"
+        let headers = {  
+            "Authorization": "Bearer "+token.key
+        };
+        let response = await fetch(newurl, { 
+            method: "GET",
+            mode: "cors",
+            headers: headers,
+        })
+        let responseJson = await response.json();
+        if(responseJson.Status == "success"){
+            return responseJson.Data;
+        }else{
+            return [""]
+        }
+    }
     public async GetLowResPhoto(filename:string):Promise<string|null>{
         let token = new Token(localStorage.getItem('token') ?? "");
 

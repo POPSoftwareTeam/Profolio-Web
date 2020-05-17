@@ -30,6 +30,9 @@ const Navbar: React.FC = (props) => {
           <Link className="linkItem" to="/Myphotos">
             MyPhotos
           </Link>
+          <Link className="linkItem" to="/Sharedwithme">
+            Shared with me
+          </Link>
         </div>
       </div>
     </>
