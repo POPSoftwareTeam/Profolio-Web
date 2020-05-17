@@ -2,19 +2,19 @@ import React, { Component, FunctionComponent} from 'react';
 import { Photo } from '../../Models/PhotoModel';
 
 
+interface PhotoCardProps {
+    photo: Photo
+}
 
-
-export const PhotoCard: FunctionComponent<any> = (props:Photo) => {
-    const shareImage = function(props:Photo){
+export const PhotoCard: FunctionComponent<PhotoCardProps> = (props) => {
+    const shareImage = function(photo: Photo){
         
     }
     return(                
     <>
-        {console.log(props.base64file)}
-        {console.log(props.imagename)}
-        <img src={props.base64file}  alt={props.imagename}/>
+        <img src={props.photo.base64file}  alt={props.photo.imagename}/>
         <div>
-            <div className="button" onClick={()=>shareImage(props)}>share this image</div>
+            <div className="button" onClick={()=>shareImage(props.photo)}>share this image</div>
         </div>
     </>
     )

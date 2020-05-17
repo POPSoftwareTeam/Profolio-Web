@@ -6,23 +6,24 @@ import {Photo} from "../Models/PhotoModel"
 
 
 const SharedPhotos:React.FC = props => {
-    let [myImages,setMyImages] = React.useState<[Photo]>([new Photo("","")]);
+    let [myImages,setMyImages] = React.useState<[Photo]>([new Photo("flip","off")]);
     useEffect(() => {
         const setup = async () => {
             let iphotoservice = new APIPhotoService;
-            let photos:[Photo] = await iphotoservice.GetSharedPhotos();
-            setMyImages(photos);
+            var photos = await iphotoservice.GetSharedPhotos();
+            setMyImages(photos)
             console.log("Photos",photos)
             console.log("myImages",myImages)
+
         };
         setup();
     },[]);
     
     return (
       <>
-        <h1>Shared with you</h1>
-        {myImages.map((image2) => (
-            <PhotoCard props={image2} />
+        <h1>Your Photos</h1>
+        {myImages.map((i,key) => (
+            <PhotoCard key={key} photo={i} />
           ))}
        </>
     )
