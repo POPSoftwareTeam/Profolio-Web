@@ -1,23 +1,19 @@
 import React,{useEffect} from 'react';
 import APIPhotoService from '../Services/APIPhotoService';
+import {PhotoCard} from "./shared/PhotoCard"
+import {Photo} from "../Models/PhotoModel"
 
 
 
 const MyPhotos:React.FC = props => {
-    let [myImages,setMyImages] = React.useState<[string]>([""]);
+    let [myImages,setMyImages] = React.useState<[Photo]>([new Photo("flip","off"),]);
     useEffect(() => {
         const setup = async () => {
             let iphotoservice = new APIPhotoService;
-            let photos = await iphotoservice.GetMyPhotos();
-            let images:[string] = [""];
-            for(let item in photos){
-                let newimage = await iphotoservice.GetLowResPhoto(photos[item])
-                if(newimage){
-                    images.push(newimage);
-                }
-            }
-            images.shift();
-            setMyImages(images)
+            var photos = await iphotoservice.GetMyPhotos();
+            setMyImages(photos)
+            console.log("Photos",photos)
+            console.log("myImages",myImages)
         };
         setup();
     },[]);
@@ -25,8 +21,8 @@ const MyPhotos:React.FC = props => {
     return (
       <>
         <h1>Your Photos</h1>
-        {myImages.map((image2, index) => (
-            <img src={image2} key={index} />
+        {myImages.map((i,key) => (
+            <PhotoCard props={i} />
           ))}
        </>
     )

@@ -1,24 +1,19 @@
 import React,{useEffect} from 'react';
 import APIPhotoService from '../Services/APIPhotoService';
+import { PhotoCard } from './shared/PhotoCard';
+import {Photo} from "../Models/PhotoModel"
 
 
 
 const SharedPhotos:React.FC = props => {
-    let [myImages,setMyImages] = React.useState<[string]>([""]);
+    let [myImages,setMyImages] = React.useState<[Photo]>([new Photo("","")]);
     useEffect(() => {
         const setup = async () => {
             let iphotoservice = new APIPhotoService;
-            let photos = await iphotoservice.GetSharedPhotos();
-            console.log(photos)
-            let images:[string] = [""];
-            for(let item in photos){
-                let newimage = await iphotoservice.GetLowResPhoto(photos[item])
-                if(newimage){
-                    images.push(newimage);
-                }
-            }
-            images.shift();
-            setMyImages(images)
+            let photos:[Photo] = await iphotoservice.GetSharedPhotos();
+            setMyImages(photos);
+            console.log("Photos",photos)
+            console.log("myImages",myImages)
         };
         setup();
     },[]);
@@ -26,14 +21,12 @@ const SharedPhotos:React.FC = props => {
     return (
       <>
         <h1>Shared with you</h1>
-        {myImages.map((image2, index) => (
-            <img src={image2} key={index} />
+        {myImages.map((image2) => (
+            <PhotoCard props={image2} />
           ))}
        </>
     )
 }
-
-
 
 
 export default SharedPhotos;
