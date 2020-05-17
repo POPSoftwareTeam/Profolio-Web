@@ -6,7 +6,7 @@ import {Photo} from "../Models/PhotoModel"
 
 
 const MyPhotos:React.FC = props => {
-    let [myImages,setMyImages] = React.useState<[Photo]>([new Photo("flip","off"),]);
+    let [myImages,setMyImages] = React.useState<[Photo]>([new Photo("flip","off")]);
     useEffect(() => {
         const setup = async () => {
             let iphotoservice = new APIPhotoService;
@@ -22,7 +22,7 @@ const MyPhotos:React.FC = props => {
       <>
         <h1>Your Photos</h1>
         {myImages.map((i,key) => (
-            <PhotoCard props={i} />
+            <PhotoCard props={i.base64file} />
           ))}
        </>
     )
