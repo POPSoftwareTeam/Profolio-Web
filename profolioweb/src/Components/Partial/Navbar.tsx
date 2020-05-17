@@ -27,6 +27,9 @@ const Navbar: React.FC = (props) => {
           <Link className="linkItem" to="/Register">
             Register
           </Link>
+          <Link className="linkItem" to="/Myphotos">
+            MyPhotos
+          </Link>
         </div>
       </div>
     </>

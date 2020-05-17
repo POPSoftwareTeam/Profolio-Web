@@ -29,6 +29,7 @@ export default class APIAuthenticationService{
         })
         let responseJson = await response.json();
         if(responseJson.Status == "success"){
+            localStorage.setItem('token',responseJson.accessToken)
             return(new Token(responseJson.accessToken))
         }
     }
