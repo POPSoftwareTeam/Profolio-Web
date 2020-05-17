@@ -11,6 +11,7 @@ import Login from './Components/LoginPage'
 import Register from './Components/RegisterPage'
 import MyPhotos from './Components/MyPhotosPage'
 import SharedPhotos from './Components/SharedPhotosPage'
+import SharePhoto from './Components/SharePhotoPage'
 
 
 const App:React.FC = props => {
@@ -27,6 +28,7 @@ const App:React.FC = props => {
               <Route exact path="/Register" component ={Register}/>
               <Route exact path="/Myphotos" component ={MyPhotos}/>
               <Route exact path="/Sharedwithme" component ={SharedPhotos}/>
+              <Route exact path="/SharePhoto" component ={SharePhoto}/>
             </Switch>
        </>
     )

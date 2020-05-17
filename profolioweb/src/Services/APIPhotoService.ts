@@ -133,27 +133,22 @@ export default class APIPhotoService{
         return base64data ?? null;
     }
 
-    public async SharePhoto(photo:string):Promise<string|null>{
+    public async SharePhoto(photo:string,email:string,permission:"Full_Res"|"Low_Res"):Promise<Boolean>{
         let token = new Token(localStorage.getItem('token') ?? "");
 
-        let newurl = this.api+"/Photos/FullRes/"+photo
+        let newurl = this.api+"/Photos/GrantClientPermissions"
         let headers = {  
+            "Content-Type": "application/json",
             "Authorization": "Bearer "+token.key
         };
+        let body = JSON.stringify({Email:email,Photo:photo,Permission:permission})
         let response = await fetch(newurl, { 
-            method: "GET",
+            method: "Post",
             mode: "cors",
+            body:body,
             headers: headers,
-        }).then(response=>response.blob())
-
-
-        const reader = new FileReader();
-        await new Promise((resolve, reject) => {
-            reader.onload = resolve;
-            reader.onerror = reject;
-            reader.readAsDataURL(response);
-          });
-        let base64data = reader.result?.toString()
-        return base64data ?? null;
+        }).then(response=>response.json())
+        console.log(response);
+        return true;
     }
 }
