@@ -3,7 +3,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1.6fr;
     grid-template-rows: 1fr 4fr 3fr 2fr;
-    height:calc(100vh - 66px); //Fix the height later, I just hard coded this for now cuz it needs to be based off the navbar height
+    height:calc(100vh - 70px); //Fix the height later, I just hard coded this for now cuz it needs to be based off the navbar height
 }
 .MainContent{
     grid-column:1/3;
