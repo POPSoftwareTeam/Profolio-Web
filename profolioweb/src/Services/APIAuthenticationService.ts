@@ -2,7 +2,7 @@ import { User } from "../Models/UserModel";
 import { Token } from "../Models/TokenModel";
 
 export default class APIAuthenticationService{
-    readonly api = "http://206.189.218.168"
+    readonly api = "http://api.profolio.photos"
     public async Register(user:User){
         let newurl = this.api+"/Register";
         let body = JSON.stringify({User:user});
@@ -14,7 +14,7 @@ export default class APIAuthenticationService{
             body: body
         })
         let responseJson = await response.json();
-        console.log("in the thing")
+        console.log(responseJson)
     }
     public async Login(user:User){
         let newurl = this.api+"/Login";
@@ -32,5 +32,6 @@ export default class APIAuthenticationService{
             localStorage.setItem('token',responseJson.accessToken)
             return(new Token(responseJson.accessToken))
         }
+        return null;
     }
 }
