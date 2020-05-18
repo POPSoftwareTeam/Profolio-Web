@@ -4,15 +4,20 @@ import APIAuthenticationService from "../Services/APIAuthenticationService";
 import APIPhotoService from "../Services/APIPhotoService";
 import { User } from "../Models/UserModel";
 import MainButton from "./shared/MainButton";
+import { RouteComponentProps } from 'react-router-dom';
 
-const Login: React.FC = (props) => {
+const Login: React.FC<RouteComponentProps> = (props) => {
   let [email, setEmail] = React.useState<string>("");
   let [password, setPassword] = React.useState<string>("");
 
   const submitCharityToAPI = async () => {
     let authservice = new APIAuthenticationService();
     let token = await authservice.Login(new User(email, password));
-    console.log(token);
+    console.log(token)
+    if(token)
+    {
+        props.history.push('/MyPhotos')
+    }
   };
 
   return (

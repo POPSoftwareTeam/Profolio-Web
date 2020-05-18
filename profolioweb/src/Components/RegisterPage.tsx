@@ -3,9 +3,10 @@ import "../css/form.scss";
 import APIAuthenticationService from "../Services/APIAuthenticationService";
 import { User } from "../Models/UserModel";
 import MainButton from "./shared/MainButton";
+import { RouteComponentProps } from 'react-router-dom';
 
 
-const Register: React.FC = (props) => {
+const Register: React.FC<RouteComponentProps>= (props) => {
   let [email, setEmail] = React.useState<string>("");
   let [password, setPassword] = React.useState<string>("");
   let [verifyPassword, setVerifyPassword] = React.useState<string>("");
@@ -13,7 +14,12 @@ const Register: React.FC = (props) => {
   const submitCharityToAPI = async () => {
     let authservice = new APIAuthenticationService();
     if (password == verifyPassword) {
-      await authservice.Register(new User(email, password));
+    let response: boolean;
+    await authservice.Register(new User(email, password));
+      if (response === true )
+      {
+          props.history.push('/MyPhotos')
+      }
     }
   };
 
