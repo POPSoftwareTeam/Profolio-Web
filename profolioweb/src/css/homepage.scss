@@ -8,7 +8,7 @@
 .MainContent {
   grid-column: 1/3;
   grid-row: 1/4;
-  background-color: $color8;
+  background-color: $color1;
   padding: 1em;
 }
 .mainText {
@@ -48,7 +48,7 @@
 .bottomStuff {
   grid-column: 1/2;
   grid-row: 4/5;
-  background-color: $color3;
+  background-color: $color4;
   color: white;
   text-align: center;
 }
@@ -60,7 +60,7 @@
 .bottomRightStuff {
   grid-column: 2/3;
   grid-row: 4/5;
-  background-color: $color2;
+  background-color: $color3;
   color: white;
   text-align: center;
 }
@@ -70,7 +70,7 @@
     grid-template-columns: 1fr;
     grid-template-rows: 4fr 1fr 1fr;
     //height:calc(100vh - 66px); //Fix the height later, I just hard coded this for now cuz it needs to be based off the navbar height
-    height: 100%;
+    //height: 100%;
   }
 
   .MainContent {
@@ -90,18 +90,10 @@
   .bottomStuff {
     grid-column: 1;
     grid-row: 2;
-    background-color: $color3;
-    color: white;
-    text-align: center;
-    height: 100%;
   }
   .bottomRightStuff {
     grid-column: 1;
     grid-row: 3;
-    background-color: $color2;
-    color: white;
-    text-align: center;
-    height: 100%;
   }
   .bottomText {
     position: relative;
