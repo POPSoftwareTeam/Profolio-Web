@@ -1,15 +1,16 @@
 import React from "react";
 import "../css/homepage.scss";
 import { withRouter } from "react-router";
+import { RouteComponentProps } from 'react-router-dom';
 import profolioIcon from "../resources/Images/profolioIcon.png";
 import MainButton from "./shared/MainButton";
-const Home: React.FC = (props) => {
+
+const Home: React.FC<RouteComponentProps> = (props)  => {
   const navigateToRegister = (link: string) => {
-    //props.history.push("/Register");
+    props.history.push("/Register");
   };
   return (
     <>
-      {/* <h1>WELCOME TO THE HOME PAGE</h1> */}
       <div className="grid-container">
         <div className="MainContent">
           <div className="mainText">
