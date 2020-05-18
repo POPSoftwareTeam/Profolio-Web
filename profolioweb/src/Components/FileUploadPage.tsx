@@ -22,9 +22,7 @@ const FileUpload: React.FC = (props) => {
           type="file"
           onChange={(event: any) => setImage(event.target.files[0])}></input>
         <div className="buttonBox">
-          <div onClick={async () => await submitCharityToAPI()}>
-            <MainButton text={"Submit"} />
-          </div>
+            <MainButton text={"Submit"} onClick={async () => await submitCharityToAPI()}/>
         </div>
       </form>
     </>

@@ -22,9 +22,7 @@ const Home: React.FC<RouteComponentProps> = (props)  => {
               get everyone coordinated with our fast and reliable image sharing
               service.
               <div className="buttonBox">
-                <div onClick={(link) => navigateToRegister("/Register")}>
-                  <MainButton text="Register Now!" />
-                </div>
+                  <MainButton text="Register Now!" onClick={(link) => navigateToRegister("/Register")}/>
               </div>
             </div>
           </div>

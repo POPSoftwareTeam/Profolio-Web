@@ -1,0 +1,66 @@
+@import "./palette.scss";
+
+.registerEmailContainer {
+    text-align: center;
+    min-height: $FullPageHeight;
+    width: 100%;
+    background-color: $color8;
+
+    & .content{
+        padding: 2em;
+    }
+    & .imageLogo {
+        & img {
+            max-height: 100px;
+            max-width: 100%;
+        }
+    }
+    & .confettiBox {
+       
+        display: flex;
+        text-align: center;
+        justify-content: right;
+        & div {
+            width: 100%;
+        }
+        & img{
+            max-width: 50%;
+            max-height: 300px;
+        }
+    }
+   
+    & .registrationText {
+        margin-top: 1em;
+        font-size: 4vw;
+    }
+    & .contentText{
+        font-size: 2vw;
+        margin-top: 1em;
+        margin-bottom: 2em;
+    }
+}
+@media screen and (max-width: 950px){
+    .registerEmailContainer {
+        text-align: center;
+        height: $FullPageHeight;
+        width: 100%;
+        background-color: $color8;
+    
+        & .content{
+            padding: 2em;
+        }
+        & .imageLogo {
+            & img {
+            }
+        }
+        & .thanksText {
+            font-size: 4vw;
+        }
+        & .registrationText {
+            font-size: 9vw;
+        }
+        & .contentText{
+            font-size: 5vw;
+        }
+    }
+}

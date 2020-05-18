@@ -50,9 +50,7 @@ const Login: React.FC<RouteComponentProps> = (props) => {
               />
             </div>
             <div className="buttonBoxCenter" >
-              <div onClick={async () => await submitCharityToAPI()}>
-               <MainButton text={"Login"}/>
-              </div>
+               <MainButton text={"Login"} onClick={async () => await submitCharityToAPI()}/>
             </div>
           </form>
         </div>

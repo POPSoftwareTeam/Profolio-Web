@@ -3,11 +3,12 @@ import "../../css/form.scss";
 
 interface MainButtonProps{
     text: string,
+    onClick(e: React.MouseEvent<HTMLElement>): void,
 }
 const MainButton: React.FC<MainButtonProps> = (props) => {
   return (
     <div className="button" 
-    //onClick={async () => await submitCharityToAPI()}
+      onClick={props.onClick}
     >
       <span>{props.text}</span>
       <svg>
