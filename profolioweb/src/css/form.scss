@@ -31,11 +31,11 @@
     &:hover,
     &:focus,
     &:active:focus {
-      color: $color1;
+      color: $colorButton1;
       outline: none;
-      border-bottom: 1px solid $color1;
+      border-bottom: 1px solid $colorButton1;
       &::placeholder {
-        color: $color1;
+        color: $colorButton1;
         position: relative;
         -webkit-transform: translateY(-20px);
         transform: translateY(-20px);
