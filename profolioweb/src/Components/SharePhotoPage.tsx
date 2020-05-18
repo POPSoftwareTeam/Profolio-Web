@@ -35,7 +35,7 @@ const SharePhoto: FunctionComponent<any> = (props:Photo) => {
             />
         <select value={permission} onChange={(event: any) => setPermission(event.target.value)}>
             <option value="Low_Res">low resolution</option>
-            <option value="lime">full resolution</option>
+            <option value="Full_Res">full resolution</option>
           </select>
             <div className="button" onClick={()=>shareImage(props)}>share this image</div>
         </div>
