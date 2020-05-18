@@ -1,91 +1,93 @@
 @import "./palette.scss";
-.form-grid-container{
-    display: grid;
-    grid-template-columns: 1fr 1.4fr 1fr;
-    grid-template-rows: 1fr 1fr 4fr;
-    height:calc(100vh - 70px); //Fix the height later, I just hard coded this for now cuz it needs to be based off the navbar height
+.form-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr 1fr;
+  grid-template-rows: 1fr 1fr 4fr;
+  height: calc(
+    100vh - 70px
+  ); //Fix the height later, I just hard coded this for now cuz it needs to be based off the navbar height
 }
-.leftImage{
-    grid-column: 1/3;
-    grid-row: 1/4;
-    background: url(../resources/Images/loginImage1.jpg);
-    background-size: cover;
+.leftImage {
+  grid-column: 1/3;
+  grid-row: 1/4;
+  background: url(../resources/Images/loginImage1.jpg);
+  background-size: cover;
 }
-.form{
-    grid-column: 3/4;
-    grid-row: 2/3;
-    text-align: left;
-    & input{
-      display:block;
-      height:60px;
-      width:80%;
-      margin:0 auto;
-      border:none;
-      &::placeholder{
-        -webkit-transform:translateY(0px);
-          transform:translateY(0px);
-        -webkit-transition:.5s;
-          transition:.5s;
-      }
-      
-      &:hover,
-      &:focus,
-      &:active:focus{
-        color:$color1;
-        outline:none;
-        border-bottom:1px solid $color1;
-        &::placeholder{
-          color:$color1;
-          position:relative;
-          -webkit-transform:translateY(-20px);
-          transform:translateY(-20px);
-          
-        }
+.form {
+  grid-column: 3/4;
+  grid-row: 2/3;
+  text-align: left;
+  & input {
+    display: block;
+    height: 60px;
+    width: 80%;
+    margin: 0 auto;
+    border: none;
+    &::placeholder {
+      -webkit-transform: translateY(0px);
+      transform: translateY(0px);
+      -webkit-transition: 0.5s;
+      transition: 0.5s;
+    }
+
+    &:hover,
+    &:focus,
+    &:active:focus {
+      color: $color1;
+      outline: none;
+      border-bottom: 1px solid $color1;
+      &::placeholder {
+        color: $color1;
+        position: relative;
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
       }
     }
-  
+  }
+
   & .email,
-  & .pwd{
-    position:relative;
-    z-index:1;
-    border-bottom:1px solid rgba(0,0,0,.1);
-    padding-left:20px;
-    font-family: 'Open Sans', sans-serif;
+  & .pwd {
+    position: relative;
+    z-index: 1;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 20px;
+    font-family: "Open Sans", sans-serif;
     ////text-transform:uppercase;
-    color:#858585;
-    font-weight:lighter;
-    -webkit-transition:.5s;
-    transition:.5s;
+    color: #858585;
+    font-weight: lighter;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
     margin-top: 2em;
   }
 }
 
-h2{
-    text-align: center;
-    padding:40px;
-    font-weight:lighter;
-    text-transform:uppercase;
-    color:#414141;
-  }
-  @media screen and (max-width: 950px), (any-pointer: coarse)
-{
-  .form-grid-container{
+h2 {
+  text-align: center;
+  padding: 40px;
+  font-weight: lighter;
+  text-transform: uppercase;
+  color: #414141;
+}
+@media screen and (max-width: 950px), (any-pointer: coarse) {
+  .form-grid-container {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 4fr;
-    height:calc(100vh - 66px); //Fix the height later, I just hard coded this for now cuz it needs to be based off the navbar height
-}
-.leftImage{
+    height: calc(
+      100vh - 66px
+    ); //Fix the height later, I just hard coded this for now cuz it needs to be based off the navbar height
+  }
+  .leftImage {
     grid-column: 1;
     grid-row: 1/4;
     background: url(../resources/Images/loginImage1.jpg);
     background-size: cover;
-    background-color: rgba(white, .2);
+    background-color: rgba(white, 0.2);
     background-blend-mode: lighten;
-}
-.form{
+  }
+  .form {
     grid-column: 1;
     grid-row: 2/3;
     text-align: left;
-}
+  }
 }
