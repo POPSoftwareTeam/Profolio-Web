@@ -12,9 +12,11 @@ export default class APIAuthenticationService{
             mode: "cors",
             headers: headers,
             body: body
-        })
-        let responseJson = await response.json();
-        console.log(responseJson)
+        }).then(response => response.json())
+        if(response.Status == "success"){
+            return true;
+        }
+        return false
     }
     public async Login(user:User){
         let newurl = this.api+"/Login";
@@ -26,11 +28,10 @@ export default class APIAuthenticationService{
             mode: "cors",
             headers: headers,
             body: body
-        })
-        let responseJson = await response.json();
-        if(responseJson.Status == "success"){
-            localStorage.setItem('token',responseJson.accessToken)
-            return(new Token(responseJson.accessToken))
+        }).then(response => response.json())
+        if(response.Status == "success"){
+            localStorage.setItem('token',response.accessToken)
+            return(new Token(response.accessToken))
         }
         return null;
     }
