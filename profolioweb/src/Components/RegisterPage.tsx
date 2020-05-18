@@ -14,11 +14,12 @@ const Register: React.FC<RouteComponentProps>= (props) => {
   const submitCharityToAPI = async () => {
     let authservice = new APIAuthenticationService();
     if (password == verifyPassword) {
-    let response: boolean;
-    await authservice.Register(new User(email, password));
+      let response: boolean;
+      response = await authservice.Register(new User(email, password));
+
       if (response === true )
       {
-          props.history.push('/MyPhotos')
+          props.history.push('/Login')
       }
     }
   };
