@@ -14,7 +14,7 @@ const Navbar: React.FC = (props) => {
         <button onClick={() => onToggle()}>
           <FaAlignRight />
         </button>
-        <div className={toggle ? "nav-links show-nav" : "nav-links"}>
+        <div className={toggle ? "show-nav" : "no-nav"}>
           <Link className="linkItem " to="/">
             Home
           </Link>

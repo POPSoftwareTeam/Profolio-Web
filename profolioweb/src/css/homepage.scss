@@ -29,6 +29,7 @@
 }
 .mainText img{
     max-height: 190px;
+    max-width:100%;
 }
 .mainText .prompt{
     grid-column:2/4;
@@ -40,17 +41,17 @@
 .rightImage{
     grid-column:3/4;
     grid-row:1/5;
-    background: url(../resources/Images/cameraBackground.jpg);
+    background: url(../resources/Images/loginImage4.jpg);
     background-size: cover;
     padding: 1em;
 }
+
 .bottomStuff{
     grid-column:1/2;
     grid-row:4/5;
     background-color: $color3;
     color: white;
     text-align: center;
-
 }
 .bottomText{
     position: relative;
@@ -64,7 +65,51 @@
     color: white;
     text-align: center;
 }
+@media screen and (max-width: 950px) {
+    .grid-container{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 4fr 1fr 1fr;
+        //height:calc(100vh - 66px); //Fix the height later, I just hard coded this for now cuz it needs to be based off the navbar height
+        height: 100%;
+     }
 
+    .MainContent{
+        grid-column: 1;
+        grid-row:1;
+        //background-color: $color8;
+        background-image: url(../resources/Images/blue-lake-nature-water-40465.jpg);
+        background-color: rgba(white, .5);
+        background-size: cover;
+        background-blend-mode: lighten;
+        padding: .2em;
+        padding: 1em;
+    }
+    .rightImage{
+        display: none;
+    }
+    .bottomStuff{
+        grid-column:1;
+        grid-row:2;
+        background-color: $color3;
+        color: white;
+        text-align: center;
+        height: 100%;
+    }
+    .bottomRightStuff{
+        grid-column:1;
+        grid-row:3;
+        background-color: $color2;
+        color: white;
+        text-align: center;
+        height: 100%;
+    }
+    .bottomText{
+        position: relative;
+        top: 40%;
+        font-size: x-large;
+    }
+}
 //////////////////////////////////////
 //Button CSS
 //////////////////////////////////////@extend@import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");

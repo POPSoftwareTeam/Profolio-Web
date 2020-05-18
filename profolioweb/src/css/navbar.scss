@@ -1,18 +1,12 @@
 @import "./palette.scss";
-.linkItem {
-    padding: 10px 15px;
-    color: white;
-    text-decoration: none;
-    font-size: larger;
-}
-li {
+.navBar .linkItem {
     padding: 10px 15px;
     color: white;
     text-decoration: none;
     font-size: larger;
 }
 
-button {
+.navBar button {
     font-size: 30px;
     margin-right: 30px;
     color: white;
@@ -31,32 +25,41 @@ button {
     padding: 20px 20px;
 }
 
-.links {
+.navBar .links {
   height: 0;
   overflow: hidden;
   list-style-type: none;
   font-weight: bold;
 }
 
-.show-nav {
-    height: 120px;
+.navBar .show-nav {
+    //height: 120px;
+}
+.navBar .no-nav {
+    height: 30px;
 }
 
+
 /* Media screen size */
-@media screen and (min-width: 768px) {
-    button {
+@media screen and (min-width: 950px) {
+    .navBar button {
         display: none;
     }
 
-    .links {
+    .navBar .links {
         height: auto;
         display: flex;
     }
 
-    .linkItem {
+    .navBar .linkItem {
         padding: 0 15px;
     }
-    li {
-        padding: 0 15px;
+}
+@media screen and (max-width: 950px) {
+    .navBar .linkItem {
+        display: block;
+    }
+    .no-nav .linkItem {
+        display: none;
     }
 }
