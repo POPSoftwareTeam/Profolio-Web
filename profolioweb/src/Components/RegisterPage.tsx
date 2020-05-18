@@ -19,7 +19,7 @@ const Register: React.FC<RouteComponentProps>= (props) => {
 
       if (response === true )
       {
-          props.history.push('/Login')
+          props.history.push('/RegisterEmail')
       }
     }
   };
