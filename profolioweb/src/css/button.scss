@@ -30,8 +30,8 @@
       stroke-width: 5;
   
       .o1 {
-        stroke: rgba($color4a, 0.8);
-        fill: $color4;
+        stroke: rgba($colorButton1, 0.8);
+        fill: $colorButton;
         transition: all 1s ease-in-out;
       }
   
@@ -52,7 +52,7 @@
   
     &:hover {
       .o1 {
-        fill: rgba($color4b, 0.85);
+        fill: rgba($colorButton2, 0.85);
       }
   
       .o2 {
