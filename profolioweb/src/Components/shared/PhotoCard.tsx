@@ -9,6 +9,7 @@ interface PhotoCardProps {
 
 export const PhotoCard: FunctionComponent<PhotoCardProps> = (props) => {
     let [myImage,setMyImage] = React.useState<Photo>(new Photo("",""));
+    let [ready,setReady] = React.useState<boolean>(false)
     const shareImage = function(photo: Photo){
         console.log(photo.imagename)
     }
@@ -17,15 +18,27 @@ export const PhotoCard: FunctionComponent<PhotoCardProps> = (props) => {
             let iphotoservice = new APIPhotoService;
             var photo = await iphotoservice.GetLowResPhotoFile(props.photo);
             setMyImage(photo);
+            //setReady(true);
         };
         setup();
     },[]);
-    return(                
-    <>
+
+
+    if(!ready){
+        return(            
         <div className="photocard">
-            <img src={myImage.base64file}  alt={myImage.imagename}/>
+            <div className="loading"></div>
             <div className="button" onClick={()=>shareImage(myImage)}>share this image</div>
         </div>
-    </>
     )
+    }else{
+        return(                
+        <>
+            <div className="photocard">
+                <img src={myImage.base64file}  alt={myImage.imagename}/>
+                <div className="button" onClick={()=>shareImage(myImage)}>share this image</div>
+            </div>
+        </>
+        )
+    }
 };
