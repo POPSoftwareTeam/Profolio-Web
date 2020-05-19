@@ -2,6 +2,7 @@ import React,{useEffect} from 'react';
 import APIPhotoService from '../Services/APIPhotoService';
 import {PhotoCard} from "./shared/PhotoCard"
 import {Photo} from "../Models/PhotoModel"
+import "../css/PhotoCard.scss"
 
 
 
@@ -21,9 +22,11 @@ const MyPhotos:React.FC = props => {
     return (
       <>
         <h1>Your Photos</h1>
-        {myImages.map((i,key) => (
-            <PhotoCard key={key} photo={i} />
-          ))}
+        <div className = "photo-holder">
+            {myImages.map((i,key) => (
+                <PhotoCard key={key} photo={i} />
+                ))}
+        </div>
        </>
     )
 }

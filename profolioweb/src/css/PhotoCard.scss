@@ -1,0 +1,21 @@
+.photo-holder{
+    display: flex;
+    margin: 20px;
+}
+.photocard{
+    display: inline-block;
+    width: 30%;
+    height: auto;
+    padding: 1px;
+    margin: 10px;
+}
+.photocard .button{
+    color: black;
+}
+
+.photocard img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+}
+
