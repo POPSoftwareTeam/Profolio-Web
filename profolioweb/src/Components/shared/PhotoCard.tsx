@@ -18,7 +18,7 @@ export const PhotoCard: FunctionComponent<PhotoCardProps> = (props) => {
             let iphotoservice = new APIPhotoService;
             var photo = await iphotoservice.GetLowResPhotoFile(props.photo);
             setMyImage(photo);
-            //setReady(true);
+            setReady(true);
         };
         setup();
     },[]);
