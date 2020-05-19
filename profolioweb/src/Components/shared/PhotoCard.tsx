@@ -4,7 +4,7 @@ import "../../css/PhotoCard.scss"
 import APIPhotoService from '../../Services/APIPhotoService';
 
 interface PhotoCardProps {
-    photo:string;
+    photo:any;
 }
 
 export const PhotoCard: FunctionComponent<PhotoCardProps> = (props) => {
