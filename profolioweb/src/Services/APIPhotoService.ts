@@ -59,17 +59,12 @@ export default class APIPhotoService{
             return [""]
         }
     }
-    public async GetMyPhotos():Promise<[Photo]>{
-        let photos = await this.GetMyPhotoNames();
-        let images:[Photo] = [new Photo("","")];
-        for(let i in photos){
-            let newimage = await this.GetLowResPhoto(photos[i])
-            if(newimage){
-                images.push(new Photo(photos[i],newimage));
-            }
+    public async GetLowResPhotoFile(photoname:string):Promise<Photo>{
+        let newimage = await this.GetLowResPhoto(photoname)
+        if(newimage){
+            return new Photo(photoname,newimage);
         }
-        images.shift()
-        return images
+        return new Photo("","")
     }
 
     public async GetSharedPhotos():Promise<[Photo]>{
