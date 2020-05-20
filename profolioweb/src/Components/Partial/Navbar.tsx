@@ -33,9 +33,6 @@ const Navbar: React.FC = (props) => {
           <Link className="linkItem" to="/Sharedwithme">
             Shared with me
           </Link>
-          <Link className="linkItem" to="/SharePhoto">
-            Share a photo
-          </Link>
         </div>
       </div>
     </>
