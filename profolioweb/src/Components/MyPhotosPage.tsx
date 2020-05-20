@@ -10,9 +10,16 @@ const MyPhotos:React.FC<RouteComponentProps> = props => {
     let [myImages,setMyImages] = React.useState<[string]>([""]);
     let [ready,setReady] = React.useState<boolean>(false)
     const shareImage = function(photo: string){
-        console.log(photo)
         props.history.push({
             pathname: '/SharePhoto',
+            state: { photo: photo }
+        })
+    }
+
+    const ViewFullPhoto = function(photo: string){
+        console.log(photo)
+        props.history.push({
+            pathname: '/FullPhoto',
             state: { photo: photo }
         })
     }
@@ -39,7 +46,7 @@ const MyPhotos:React.FC<RouteComponentProps> = props => {
             <h1>Your Photos</h1>
             <div className = "photo-holder">
                 {myImages.map((key,i) => (
-                    <div className="photocard">
+                    <div onClick={()=>ViewFullPhoto(myImages[i])} className="photocard">
                         <PhotoCard key={key} photo={myImages[i]} />
                         <div className="button" onClick={()=>shareImage(myImages[i])}>share this image</div>
                     </div>

@@ -67,6 +67,15 @@ export default class APIPhotoService{
         return new Photo("","")
     }
 
+
+    public async GetFullResPhotoFile(photoname:string):Promise<Photo>{
+        let newimage = await this.GetFullResPhoto(photoname)
+        if(newimage){
+            return new Photo(photoname,newimage);
+        }
+        return new Photo("","")
+    }
+
     public async GetSharedPhotos():Promise<[Photo]>{
         let photos = await this.GetSharedPhotoNames();
         let images:[Photo] = [new Photo("","")];
