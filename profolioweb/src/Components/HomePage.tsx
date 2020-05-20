@@ -31,7 +31,7 @@ const Home: React.FC<RouteComponentProps> = (props)  => {
         </div>
         <div className="rightImage"></div>
         <div className="bottomStuff">
-          <div className="bottomText">Upload your images!</div>
+          <div className="bottomText">Upload your Full Resolution images!</div>
         </div>
         <div className="bottomRightStuff">
           <div className="bottomText">Share those images with clients!</div>

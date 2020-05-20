@@ -1,6 +1,7 @@
 import React, { Component, FunctionComponent} from 'react';
 import APIPhotoService from '../Services/APIPhotoService'
 import { PhotoCard } from './shared/PhotoCard';
+import MainButton from './shared/MainButton';
 
 const SharePhoto: FunctionComponent<any> = (props:any) => {
     let [username,setUsername] = React.useState<string>("");
@@ -28,7 +29,11 @@ const SharePhoto: FunctionComponent<any> = (props:any) => {
             <option value="Low_Res">low resolution</option>
             <option value="Full_Res">full resolution</option>
           </select>
-            <div  onClick={()=>shareImage(props)}>share this image</div>
+
+          <div className="buttonBox">
+               <MainButton text={"Share"} onClick={async () => await shareImage(props)}/>
+            </div>
+
         </div>
     </>
     )

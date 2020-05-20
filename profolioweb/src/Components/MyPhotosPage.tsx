@@ -17,7 +17,6 @@ const MyPhotos:React.FC<RouteComponentProps> = props => {
     }
 
     const ViewFullPhoto = function(photo: string){
-        console.log(photo)
         props.history.push({
             pathname: '/FullPhoto',
             state: { photo: photo }
@@ -29,7 +28,6 @@ const MyPhotos:React.FC<RouteComponentProps> = props => {
             let iphotoservice = new APIPhotoService;
             var photos = await iphotoservice.GetMyPhotoNames();
             await myImages.push(...photos);
-            console.log("myImages",myImages)
             myImages.shift();
             setReady(true)
         };
@@ -46,9 +44,12 @@ const MyPhotos:React.FC<RouteComponentProps> = props => {
             <h1>Your Photos</h1>
             <div className = "photo-holder">
                 {myImages.map((key,i) => (
-                    <div onClick={()=>ViewFullPhoto(myImages[i])} className="photocard">
-                        <PhotoCard key={key} photo={myImages[i]} />
+                    <div className="photocard">
+                        <div onClick={()=>ViewFullPhoto(myImages[i])} className="photocard-photo">
+                            <PhotoCard key={key} photo={myImages[i]} />
+                        </div>
                         <div className="button" onClick={()=>shareImage(myImages[i])}>share this image</div>
+                        
                     </div>
                     ))}
             </div>

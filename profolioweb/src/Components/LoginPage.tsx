@@ -13,7 +13,6 @@ const Login: React.FC<RouteComponentProps> = (props) => {
   const submitCharityToAPI = async () => {
     let authservice = new APIAuthenticationService();
     let token = await authservice.Login(new User(email, password));
-    console.log(token)
     if(token)
     {
         props.history.push('/MyPhotos')

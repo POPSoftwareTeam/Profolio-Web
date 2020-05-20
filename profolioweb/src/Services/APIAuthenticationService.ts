@@ -21,7 +21,6 @@ export default class APIAuthenticationService{
     public async Login(user:User){
         let newurl = this.api+"/Login";
         let body = JSON.stringify({User:user});
-        console.log(body)
         let headers = { "Content-Type": "application/json" };
         let response = await fetch(newurl, {
             method: "POST",

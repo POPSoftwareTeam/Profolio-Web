@@ -90,51 +90,71 @@ export default class APIPhotoService{
     }
 
     public async GetLowResPhoto(filename:string):Promise<string|null>{
-        let token = new Token(localStorage.getItem('token') ?? "");
+        try{
+            let token = new Token(localStorage.getItem('token') ?? "");
 
-        let newurl = this.api+"/Photos/LowRes/"+filename
-        let headers = {  
-            "Authorization": "Bearer "+token.key
-        };
-        let response = await fetch(newurl, { 
-            method: "GET",
-            mode: "cors",
-            headers: headers,
-        }).then(response=>response.blob())
+            let newurl = this.api+"/Photos/LowRes/"+filename
+            let headers = {  
+                "Authorization": "Bearer "+token.key
+            };
+            let response = await fetch(newurl, { 
+                method: "GET",
+                mode: "cors",
+                headers: headers,
+            }).then(function(response) {
+                if (!response.ok) {
+                    throw Error(response.statusText);
+                }
+                return response;
+            }).then(response=>response.blob())
 
 
-        const reader = new FileReader();
-        await new Promise((resolve, reject) => {
-            reader.onload = resolve;
-            reader.onerror = reject;
-            reader.readAsDataURL(response);
-          });
-        let base64data = reader.result?.toString()
-        return base64data ?? null;
+            const reader = new FileReader();
+            await new Promise((resolve, reject) => {
+                reader.onload = resolve;
+                reader.onerror = reject;
+                reader.readAsDataURL(response);
+            });
+            let base64data = reader.result?.toString()
+            return base64data ?? null;
+        }catch(error){
+            return null
+        }
     }
 
     public async GetFullResPhoto(filename:string):Promise<string|null>{
-        let token = new Token(localStorage.getItem('token') ?? "");
+        try{
+            let token = new Token(localStorage.getItem('token') ?? "");
 
-        let newurl = this.api+"/Photos/FullRes/"+filename
-        let headers = {  
-            "Authorization": "Bearer "+token.key
-        };
-        let response = await fetch(newurl, { 
-            method: "GET",
-            mode: "cors",
-            headers: headers,
-        }).then(response=>response.blob())
+            let newurl = this.api+"/Photos/FullRes/"+filename
+            let headers = {  
+                "Authorization": "Bearer "+token.key
+            };
+            let response = await fetch(newurl, { 
+                method: "GET",
+                mode: "cors",
+                headers: headers,
+            }).then(function(response) {
+                if (!response.ok) {
+                    throw Error(response.statusText);
+                }
+                return response;
+            }).then(response=>response.blob())
 
-
-        const reader = new FileReader();
-        await new Promise((resolve, reject) => {
-            reader.onload = resolve;
-            reader.onerror = reject;
-            reader.readAsDataURL(response);
-          });
-        let base64data = reader.result?.toString()
-        return base64data ?? null;
+            
+                const reader = new FileReader();
+                await new Promise((resolve, reject) => {
+                    reader.onload = resolve;
+                    reader.onerror = reject;
+                    reader.readAsDataURL(response);
+                });
+                let base64data = reader.result?.toString()
+                return base64data ?? null;
+            
+        }catch(error){
+            console.log(error)
+            return null
+        }
     }
 
     public async SharePhoto(photo:string,email:string,permission:"Full_Res"|"Low_Res"):Promise<Boolean>{
@@ -152,7 +172,6 @@ export default class APIPhotoService{
             body:body,
             headers: headers,
         }).then(response=>response.json())
-        console.log(response);
         return true;
     }
 }

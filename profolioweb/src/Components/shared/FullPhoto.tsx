@@ -11,14 +11,24 @@ interface FullPhotoProps {
 export const FullPhoto: FunctionComponent<FullPhotoProps> = (props) => {
     let [myImage,setMyImage] = React.useState<Photo>(new Photo("",""));
     let [ready,setReady] = React.useState<boolean>(false)
+    let [fullres,setFullRes] = React.useState<boolean>(true)
 
     useEffect(() => {
         const setup = async () => {
             let iphotoservice = new APIPhotoService;
             var photo = await iphotoservice.GetFullResPhotoFile(props.photo);
-            setMyImage(photo);
-            setReady(true);
-            console.log("done")
+            await console.log(photo)
+            if(photo.base64file != ""){
+                console.log("not valid")
+                setMyImage(photo);
+                setReady(true);
+            }else{
+                photo = await iphotoservice.GetLowResPhotoFile(props.photo);
+                setMyImage(photo);
+                setReady(true);
+                return
+            }
+            
         };
         setup();
     },[]);

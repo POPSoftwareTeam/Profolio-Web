@@ -11,7 +11,6 @@ const FileUpload: React.FC = (props) => {
   const submitCharityToAPI = async () => {
     let photoservice = new APIPhotoService();
     await photoservice.UploadPhoto(new Token(""), image);
-    console.log(image);
   };
 
   return (
