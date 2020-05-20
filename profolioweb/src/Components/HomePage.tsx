@@ -15,7 +15,9 @@ const Home: React.FC<RouteComponentProps> = (props)  => {
         <div className="MainContent">
           <div className="mainText">
             <div className="imageBox">
+            <div className="img">
               <img src={profolioIcon} alt="" />
+              </div>
             </div>
             <div className="prompt">
               Upload images, share your galleries to clients and friends, and
