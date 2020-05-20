@@ -30,7 +30,9 @@ const SharedPhotos:React.FC = props => {
             <h1>Shared With You</h1>
             <div className = "photo-holder">
                 {myImages.map((key,i) => (
+                    <div className="photocard">
                     <PhotoCard key={key} photo={myImages[i]} />
+                    </div>
                     ))}
             </div>
            </>

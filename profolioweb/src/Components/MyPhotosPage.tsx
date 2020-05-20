@@ -2,12 +2,21 @@ import React,{useEffect} from 'react';
 import APIPhotoService from '../Services/APIPhotoService';
 import {PhotoCard} from "./shared/PhotoCard"
 import "../css/PhotoCard.scss"
+import { RouteComponentProps } from 'react-router';
 
 
 
-const MyPhotos:React.FC = props => {
+const MyPhotos:React.FC<RouteComponentProps> = props => {
     let [myImages,setMyImages] = React.useState<[string]>([""]);
     let [ready,setReady] = React.useState<boolean>(false)
+    const shareImage = function(photo: string){
+        console.log(photo)
+        props.history.push({
+            pathname: '/SharePhoto',
+            state: { photo: photo }
+        })
+    }
+
     useEffect(() => {
         const setup = async () => {
             let iphotoservice = new APIPhotoService;
@@ -30,7 +39,10 @@ const MyPhotos:React.FC = props => {
             <h1>Your Photos</h1>
             <div className = "photo-holder">
                 {myImages.map((key,i) => (
-                    <PhotoCard key={key} photo={myImages[i]} />
+                    <div className="photocard">
+                        <PhotoCard key={key} photo={myImages[i]} />
+                        <div className="button" onClick={()=>shareImage(myImages[i])}>share this image</div>
+                    </div>
                     ))}
             </div>
            </>
