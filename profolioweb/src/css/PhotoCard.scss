@@ -35,6 +35,12 @@
     animation-iteration-count: infinite;
 }
 
+.fullphoto img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 @keyframes loading {
     0% {background-color: grey;}
     50% {background-color: darkgray;}

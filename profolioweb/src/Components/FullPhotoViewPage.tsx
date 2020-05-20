@@ -6,7 +6,7 @@ import { FullPhoto } from './shared/FullPhoto';
 const FullPhotoView: FunctionComponent<any> = (props:any) => {
     return(                
     <>
-        <div className="photocard">
+        <div className="fullphoto">
             <FullPhoto photo={props.location.state.photo} />
         </div>
     </>
