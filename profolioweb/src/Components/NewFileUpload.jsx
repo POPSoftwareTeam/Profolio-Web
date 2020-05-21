@@ -51,7 +51,7 @@ render() {
           )}
         </div>
       </DragAndDrop>
-        <div className="file upload" onClick={ async()=>await this.submitCharityToAPI()}>Click me</div>
+        <div className="file upload" onClick={ async()=>await this.submitCharityToAPI()}>Start Upload</div>
       </>
     )
   }
