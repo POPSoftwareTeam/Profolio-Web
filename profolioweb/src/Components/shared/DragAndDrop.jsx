@@ -74,11 +74,11 @@ class DragAndDrop extends Component {
                 right: 0,
                 left: 0,
                 textAlign: 'center',
-                color: 'grey',
+                color: 'white',
                 fontSize: 36
               }}
             >
-              <div>drop here :)</div>
+              <div>dropnpm here :)</div>
             </div>
           </div>
         }
