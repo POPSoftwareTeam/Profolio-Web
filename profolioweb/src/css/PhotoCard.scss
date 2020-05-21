@@ -68,18 +68,8 @@
     100% {background-color: grey;}
   }
 
-@media screen and (max-width: 950px) {
-    .photocard{
-        width: 45%;
-        height: 30vh;
-        padding: 1.5vh;
-        margin: 0px;
-    
-    }
-}
-
 @media screen and (max-width: 850px) {
-    .photocard{
+    .photocard-photo{
         width: 90%;
         height: auto;
         padding: 1.5vh;
