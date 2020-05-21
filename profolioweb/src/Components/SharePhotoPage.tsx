@@ -7,7 +7,7 @@ const SharePhoto: FunctionComponent<any> = (props:any) => {
     let [username,setUsername] = React.useState<string>("");
     let [permission,setPermission] = React.useState<"Low_Res"|"Full_Res">("Low_Res")
     
-    const shareImage = async function(props:any){
+    const sharePhoto = async function(props:any){
         let photoservice = new APIPhotoService();
         await photoservice.SharePhoto(props.location.state.photo,username,permission)
     }
@@ -31,7 +31,7 @@ const SharePhoto: FunctionComponent<any> = (props:any) => {
           </select>
 
           <div className="buttonBox">
-               <MainButton text={"Share"} onClick={async () => await shareImage(props)}/>
+               <MainButton text={"Share"} onClick={async () => await sharePhoto(props)}/>
             </div>
 
         </div>

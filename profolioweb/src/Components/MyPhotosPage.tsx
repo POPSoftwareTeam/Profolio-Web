@@ -9,11 +9,18 @@ import { RouteComponentProps } from 'react-router';
 const MyPhotos:React.FC<RouteComponentProps> = props => {
     let [myImages,setMyImages] = React.useState<[string]>([""]);
     let [ready,setReady] = React.useState<boolean>(false)
-    const shareImage = function(photo: string){
+    const SharePhoto = function(photo: string){
         props.history.push({
             pathname: '/SharePhoto',
             state: { photo: photo }
         })
+    }
+
+    const DeletePhoto = async function(photo:string){
+        let iphotoservice = new APIPhotoService;
+        let response = await iphotoservice.DeletePhoto(photo);
+        console.log(response)
+        props.history.push({pathname: "/Myphotos"})
     }
 
     const ViewFullPhoto = function(photo: string){
@@ -48,8 +55,8 @@ const MyPhotos:React.FC<RouteComponentProps> = props => {
                         <div onClick={()=>ViewFullPhoto(myImages[i])} className="photocard-photo">
                             <PhotoCard key={key} photo={myImages[i]} />
                         </div>
-                        <div className="button" onClick={()=>shareImage(myImages[i])}>share this image</div>
-                        
+                        <div className="button-warning" onClick={()=>DeletePhoto(myImages[i])}>Remove</div>
+                        <div className="button" onClick={()=>SharePhoto(myImages[i])}>share this image</div>
                     </div>
                     ))}
             </div>

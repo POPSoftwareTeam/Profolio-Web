@@ -7,11 +7,8 @@
 }
 .photocard{
     display: inline-block;
-    width: 30%;
-    height: 30vh;
     padding: 1px;
-    margin: 10px;
-    padding:1px;
+    margin: auto;
 }
 .photocard .button{
     color: white;
@@ -21,9 +18,17 @@
     padding:1px;
     width: 30%;
 }
+.photocard .button-warning{
+    color: white;
+    background-color:$color4 ;
+    margin:auto;
+    text-align: center;
+    padding:1px;
+    width: 30%;
+}
 .photocard-photo{
-    width: 100%;
-    height: 100%;
+    width: 30vw;
+    height: 30vh;
 }
 
 .photocard-photo img{
@@ -82,3 +87,4 @@
     
     }
 }
+
