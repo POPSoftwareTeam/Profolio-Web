@@ -4,22 +4,36 @@ import { Photo } from "../Models/PhotoModel";
 export default class APIPhotoService{
     readonly api = "http://206.189.218.168"
     public async UploadPhoto(file:any){
-        //getting token from local storage
-        let token = new Token(localStorage.getItem('token') ?? "");
-        
-        let newurl = this.api+"/Photos/Upload"
-        let formData = new FormData()
-        formData.append('avatar',file,'image.jpg')
-        let headers = {  
-            "Authorization": "Bearer "+token.key
-        };
-        let response = await fetch(newurl, { 
-            method: "POST",
-            mode: "cors",
-            headers: headers,
-            body: formData
-        })
-        let responseJson = await response.json();
+        try{        
+            //getting token from local storage
+            let token = new Token(localStorage.getItem('token') ?? "");
+            
+            let newurl = this.api+"/Photos/Upload"
+            let formData = new FormData()
+            formData.append('avatar',file,'image.jpg')
+            let headers = {  
+                "Authorization": "Bearer "+token.key
+            };
+            let response = await fetch(newurl, { 
+                method: "POST",
+                mode: "cors",
+                headers: headers,
+                body: formData
+            }).then(function(response) {
+                if (!response.ok) {
+                    throw Error(response.statusText);
+                }
+                return response;
+            })
+            let responseJson = await response.json();
+            if(responseJson.Status != "success"){
+                throw new Error("upload failed")
+            }
+            console.log(responseJson)
+            return true
+        }catch(error){
+            return false
+        }
     }
     public async GetMyPhotoNames():Promise<string[]>{
         let token = new Token(localStorage.getItem('token') ?? "");

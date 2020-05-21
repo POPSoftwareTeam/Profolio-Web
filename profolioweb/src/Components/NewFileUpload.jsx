@@ -13,8 +13,7 @@ state = {
     let fileList = this.state.files
     for (var i = 0; i < files.length; i++) {
       if (!files[i].name) return
-      console.log(files[i])
-      fileList.push(files[i])
+      fileList.push({status:"not uploaded",file:files[i]})
     }
     this.setState({files: fileList})
   }
@@ -26,8 +25,14 @@ state = {
     let files = this.state.files
     for(let i in files){
       console.log(files[i])
-      let result = await photoservice.UploadPhoto(files[i]);
-      console.log(result);
+      let result = await photoservice.UploadPhoto(files[i].file);
+      if(result){
+        files[i].status = "Finished"
+      }else{
+        files[i].status = "Failed"
+      }
+      console.log(files[i])
+      this.forceUpdate()
     }
   };
 
@@ -39,7 +44,10 @@ render() {
       <DragAndDrop handleDrop={this.handleDrop}>
         <div className="drag-and-drop" style={{height: 300, width: 250}}>
           {this.state.files.map((file) =>
-            <div>{file.name}</div>
+          <>
+            <div>{file.file.name}</div>
+            <div>{file.status}</div>
+          </>
           )}
         </div>
       </DragAndDrop>
