@@ -19,7 +19,7 @@ const Navbar: React.FC = (props) => {
             Home
           </Link>
           <Link className="linkItem" to="/FileUpload">
-            Upload a file
+            Upload
           </Link>
           <Link className="linkItem" to="/Login">
             Login

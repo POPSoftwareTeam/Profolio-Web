@@ -26,7 +26,7 @@ const App:React.FC = props => {
             renders the first one that matches the current URL. */}
             <Switch>
               <Route exact path="/" component={Home}/>
-              <Route exact path="/FileUpload" component={FileUpload}/>
+              <Route exact path="/FileUpload" component={NewFileUpload}/>
               <Route exact path="/Login" component ={Login}/>
               <Route exact path="/Register" component ={Register}/>
               <Route exact path="/RegisterEmail" component ={RegisterEmail}/>
@@ -34,7 +34,6 @@ const App:React.FC = props => {
               <Route exact path="/Sharedwithme" component ={SharedPhotos}/>
               <Route exact path="/SharePhoto" component ={SharePhoto}/>
               <Route exact path="/FullPhoto" component ={FullPhotoView}/> 
-              <Route exact path="/NewFileUpload" component ={NewFileUpload}/> 
             </Switch>
        </>
     )
