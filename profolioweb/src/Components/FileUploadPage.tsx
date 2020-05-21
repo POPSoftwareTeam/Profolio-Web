@@ -10,7 +10,7 @@ const FileUpload: React.FC = (props) => {
 
   const submitCharityToAPI = async () => {
     let photoservice = new APIPhotoService();
-    await photoservice.UploadPhoto(new Token(""), image);
+    await photoservice.UploadPhoto(image);
   };
 
   return (

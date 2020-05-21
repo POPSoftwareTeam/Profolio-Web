@@ -3,9 +3,9 @@ import { Photo } from "../Models/PhotoModel";
 
 export default class APIPhotoService{
     readonly api = "http://206.189.218.168"
-    public async UploadPhoto(token:Token,file:any){
+    public async UploadPhoto(file:any){
         //getting token from local storage
-        token = new Token(localStorage.getItem('token') ?? token.key)
+        let token = new Token(localStorage.getItem('token') ?? "");
         
         let newurl = this.api+"/Photos/Upload"
         let formData = new FormData()
