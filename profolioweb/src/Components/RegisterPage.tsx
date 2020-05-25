@@ -64,6 +64,9 @@ const Register: React.FC<RouteComponentProps>= (props) => {
                   onChange={(event: any) => validatePassword(event.target.value)}
                 />
                 <label  className="label"><div className="content">Password:</div></label>
+                
+                {password.length > 0 ? 
+                <>
                 <div className="strength">
                   <span className={strength > 0 ? "bar bar-1":"bar bar-white"} />
                   <span className={strength > 1 ? "bar bar-2":"bar bar-white"} />
@@ -77,6 +80,8 @@ const Register: React.FC<RouteComponentProps>= (props) => {
                   <div> {validations[2] === 1 ? '✔️' : '❌'} must contain a number</div>
                   <div> {validations[3] === 1 ? '✔️' : '❌'} must contain one of $&+,:;=?@#</div>
                 </div>
+                </>
+                : <></>}
               </div>
              
               <div className="formContent">
