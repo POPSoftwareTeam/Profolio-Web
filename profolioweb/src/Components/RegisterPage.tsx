@@ -92,7 +92,7 @@ const Register: React.FC<RouteComponentProps>= (props) => {
                 value={verifyPassword}
                 onChange={(event: any) => setVerifyPassword(event.target.value)}
               />
-              <label  className="label"><div className="content">Verify Password:</div></label>
+              <label  className="label"><div className="content">Re-Enter Password:</div></label>
               </div>
               <div className="buttonBoxCenter">
                <MainButton text={"Register"} onClick={async () => await submitCharityToAPI()}/>
