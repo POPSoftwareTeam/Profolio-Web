@@ -34,36 +34,39 @@ const Register: React.FC<RouteComponentProps>= (props) => {
           </h2>
           <form>
             <div className="formContent">
-              {/* <label>Email:</label> */}
+              
               <input
                 type="email"
-                className="email"
-                placeholder="Email"
+                className="email input"
+                placeholder=" "
                 value={email}
                 onChange={(event: any) => setEmail(event.target.value)}
               />
-
-              {/* <label>Password</label> */}
+              <label  className="label"><div className="content">Email:</div></label>
+              </div>
+              <div className="formContent">
               <input
                 type="password"
-                className="pwd"
-                placeholder="Password"
+                className="pwd input"
+                placeholder=" "
                 value={password}
                 onChange={(event: any) => setPassword(event.target.value)}
               />
-
-              {/* <label>Verify Password</label> */}
+              <label  className="label"><div className="content">Password:</div></label>
+              </div>
+              <div className="formContent">
               <input
                 type="password"
-                className="pwd"
-                placeholder="Verify Password"
+                className="pwd input"
+                placeholder=" "
                 value={verifyPassword}
                 onChange={(event: any) => setVerifyPassword(event.target.value)}
               />
+              <label  className="label"><div className="content">Verify Password:</div></label>
+              </div>
               <div className="buttonBoxCenter">
                <MainButton text={"Register"} onClick={async () => await submitCharityToAPI()}/>
               </div>
-            </div>
           </form>
         </div>
       </div>
