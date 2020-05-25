@@ -16,21 +16,18 @@
   transition: 500ms;
   margin: 0 auto;
 }
-.formContent::after {
-  transition: all 500ms ease;
-}
+
 .form {
   grid-column: 3/4;
   grid-row: 2/3;
   text-align: left;
   & input {
-    line-height: 2em;
     font-size: 1rem;
     background: white;
     display: block;
     height: 4rem;
     width: 80%;
-    margin: 0 auto;
+    margin: 2em auto 0 auto;
     border: none;
     // &::placeholder {
     //   -webkit-transform: translateY(0px);
@@ -70,28 +67,77 @@
 .input:not(:placeholder-shown) + .label .content {
   color: $colorButton1;
   transform: scale(0.75) translateY(-5.7rem);
-
 }
 .label {
   position: relative;
-  font-size: 1.2rem;
-  transition: all 500ms ease;
   display: block;
-  height: 60px;
   width: 80%;
+  height: 0;
   margin: 0 auto;
   pointer-events: none;
   z-index: 3;
-}
-.content {
-  color: #858585;
-  position: relative;
-  transform-origin: left;
 
-  transform: translateY(-3.2rem);
-  font-size: 1.2rem;
-  transition: all 500ms ease;
-  width: 100%;
+  & .content {
+    color: #858585;
+    position: relative;
+    transform-origin: left;
+
+    transform: translateY(-3rem);
+    font-size: 1.2rem;
+    transition: all 500ms ease;
+    width: 100%;
+  }
+}
+.strength {
+  display: flex;
+  height: 10px;
+  width: 80%;
+  margin: 5px auto;
+}
+.bar {
+  height: 100%;
+  width: 25%;
+  transition: box-shadow 500ms;
+  border-top: 1px solid #858585;
+  border-bottom: 1px solid #858585;
+}
+.bar-shadow {
+  box-shadow: none!important;
+}
+.bar-show {
+  box-shadow: none;
+}
+.bar-white{
+  background:white;
+}
+.bar-1 {
+  background: linear-gradient(to right, red, orangered) !important;
+}
+.bar-2 {
+  background: linear-gradient(to right, orangered, yellow);
+}
+.bar-3 {
+  background: linear-gradient(to right, yellow, yellowgreen);
+}
+.bar-4 {
+  background: linear-gradient(to right, yellowgreen, green);
+}
+.bar:last-child {
+  border-right: 1px solid #858585;
+}
+.bar:first-child{
+  border-left: 1px solid #858585;
+}
+.strength-text {
+  margin-top: 20px;
+}
+
+.validation {
+  position: relative;
+  width: 80%;
+  margin: 5px auto;
+  background-color: white;
+  font-size: .7rem;
 }
 
 h2 {
