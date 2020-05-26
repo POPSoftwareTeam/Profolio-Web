@@ -16,7 +16,6 @@ const Register: React.FC<RouteComponentProps>= (props) => {
         (password.search(/[0-9]/) > -1)?1:0, 
         (password.search(/[$&+,:;=?@#]/) > -1) ?1:0
     ];
-  let strength: number = validations.reduce(function(a, b){return a + b});;
 
    const validatePassword = (event:any) => {
     setPassword(event);
@@ -67,12 +66,6 @@ const Register: React.FC<RouteComponentProps>= (props) => {
                 
                 {password.length > 0 ? 
                 <>
-                <div className="strength">
-                  <span className={strength > 0 ? "bar bar-1":"bar bar-white"} />
-                  <span className={strength > 1 ? "bar bar-2":"bar bar-white"} />
-                  <span className={strength > 2 ? "bar bar-3":"bar bar-white"} />
-                  <span className={strength > 3 ? "bar bar-4":"bar bar-white"} />
-                </div>
                 <div  className="validation">
                 {console.log(validations[0])}
                   <div> {validations[0] === 1 ? '✔️' : '❌'} must be at least 5 characters</div>
